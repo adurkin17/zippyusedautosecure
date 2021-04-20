@@ -1,7 +1,7 @@
 <?php 
     switch($action) {
         case 'logout':
-            add_class($class_name);
+            classDB::add_class($class_name);
             header("Location: .?action=list_classes");
             break;
         case 'show_register':
@@ -21,13 +21,16 @@
             break;
         case 'register':
             include('util/valid_register.php');
-            valid_registration();
+            validRegister::valid_registration();
+            if (username_exists($username)) {
+                array_push($errors, "The username you entered is already taken.");
+            }
             if($error)
             {
                 include('view/register.php');
             }
             else{
-                add_admin($username,$password);
+                adminDB::add_admin($username,$password);
                 $_SESSION['is_valid_admin'] = $username;
                 header("Location .?action=list_vehicles");
             }

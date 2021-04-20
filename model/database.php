@@ -1,26 +1,38 @@
 <?php
+class Database {
     //local development server connection
-   /* $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
-    $username = 'root';
+    /*private static $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
+    private static $username = 'root';
     //$password = 'pa55word';*/
 
     // Heroku connection
     
-    $dsn = 'mysql:host=pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=hnwmc5g21co1445v';
-    $username = 'jrlvsjo47diaivlp';
-    $password = 'hkkaaztkrtgmb375'; 
+    private static $dsn = 'mysql:host=pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=hnwmc5g21co1445v';
+    private static $username = 'jrlvsjo47diaivlp';
+    private static $password = 'hkkaaztkrtgmb375'; 
+    private static $db;
+
+    private function __construct() {}
     
-    try {
+    public static function getDB() {
+        if (!isset(self::$db)){
+            try {
         //local development server connection
         //if using a $password, add it as 3rd parameter
-        $db = new PDO($dsn, $username,$password);
+                self::$db = new PDO(self::$dsn, self::$username,self::$password);
 
         // Heroku connection
         //$db = new PDO($dsn, $username, $password);
-    } catch (PDOException $e) {
-        $error = "Database Error: ";
-        $error .= $e->getMessage();
-        include('../view/error.php');
-        exit();
+            } catch (PDOException $e) {
+                $error = "Database Error: ";
+                $error .= $e->getMessage();
+                include('../view/error.php');
+                exit();
+            }
+        
+        }
+        return self::$db;
     }
+
+}
 ?>

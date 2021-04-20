@@ -8,9 +8,9 @@
     require('../model/admin_db.php');
 
     // Get required data from Model
-    $makes = get_makes();
-    $types = get_types();
-    $classes = get_classes();
+    $makes = makeClass::get_makes();
+    $types = typeDB::get_types();
+    $classes = DBClass::get_classes();
 
     // Get Parameter data sent to Controller
     $make_id = filter_input(INPUT_POST, 'make_id', FILTER_VALIDATE_INT);

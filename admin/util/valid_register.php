@@ -1,21 +1,23 @@
 <?php 
-    function valid_username($username) {
+class validRegistration{
+
+    private static function valid_username($username) {
         // Ternary Statement pg.245
         return (!$username || strlen($username) < 6) ? false : true;
     }
 
-    function valid_password($password) {
+    private static function valid_password($password) {
         // See Chapter 15: How to Use Regular Expressions
         $pattern = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/';
         return preg_match($pattern, $password);
     }
 
-    function passwords_match($password, $confirm_password) {
+    private static function passwords_match($password, $confirm_password) {
         // Will be true or false
         return $password === $confirm_password;
     }
 
-    function valid_registration($username, $password, $confirm_password) {
+    public static function valid_registration($username, $password, $confirm_password) {
         // Chapter 11 Arrays
         $errors = array();
 
@@ -37,3 +39,4 @@
 
         return $errors;
     }
+}
