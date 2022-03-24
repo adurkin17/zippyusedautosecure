@@ -1,5 +1,4 @@
 <?php 
-class DBClass {
     public static function get_classes() {
         $db = Database::getDB();
         $query = 'SELECT * FROM class ORDER BY ID';
@@ -41,4 +40,3 @@ class DBClass {
         $statement->execute();
         $statement->closeCursor();
     }
-}
