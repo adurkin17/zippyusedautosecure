@@ -1,5 +1,4 @@
 <?php
-class Database {
     //local development server connection
     /*private static $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
     private static $username = 'root';
@@ -33,6 +32,4 @@ class Database {
         }
         return self::$db;
     }
-
-}
 ?>
