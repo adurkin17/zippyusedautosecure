@@ -1,5 +1,4 @@
 <?php 
-class typeDB{
     public static function get_types() {
         $db = Database::getDB();
         $query = 'SELECT * FROM type ORDER BY ID';
@@ -41,4 +40,3 @@ class typeDB{
         $statement->execute();
         $statement->closeCursor();
     }
-}
