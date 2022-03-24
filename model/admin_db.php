@@ -1,5 +1,4 @@
 <?php 
-class adminDB {
     public static function add_admin($username, $password) {
         global $db;
         $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -35,4 +34,3 @@ class adminDB {
         $result = $statement->fetchColumn();
         return $result;
     }
-}
