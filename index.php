@@ -1,9 +1,5 @@
 <?php
 
-    //start cookies
-    $lifetime = 60*60*24*7;
-    session_set_cookie_params($lifetime, '/');
-    session_start();
     // Model 
     require('model/database.php');
     require('model/vehicle_db.php');
@@ -61,19 +57,8 @@
         });
     }
 
-    if($firstname)
-    {
-        $_SESSION['userid'] = $firstname;
-    }
-
     switch($action)
     {
-        case 'register':
-            include('view/register.php');
-            break;
-        case 'logout':
-            include('view/logout.php');
-            break;
         default:
             include('view/vehicle_list.php');
     }
