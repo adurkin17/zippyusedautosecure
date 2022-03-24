@@ -1,5 +1,4 @@
 <?php 
-class vehicleDB{
     public static function get_vehicles_by_class($class_id, $sort) {
         $db = Database::getDB();
         if ($sort == 'year'){
@@ -116,4 +115,3 @@ class vehicleDB{
         $statement->execute();
         $statement->closeCursor();
     }
-}
