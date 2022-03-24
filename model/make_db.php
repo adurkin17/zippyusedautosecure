@@ -1,5 +1,4 @@
 <?php 
-class makeClass {
     public static function get_makes() {
         $db = Database::getDB();
         $query = 'SELECT * FROM makes ORDER BY ID';
@@ -41,4 +40,3 @@ class makeClass {
         $statement->execute();
         $statement->closeCursor();
     }
-}
