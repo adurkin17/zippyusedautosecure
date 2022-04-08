@@ -7,9 +7,9 @@ class Database {
 
     // Heroku connection
     
-    private static $dsn = 'mysql:host=ik1eybdutgxsm0lo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=j0dgzj9z17h6lpy8';
-    private static $username = 'yjybte8az452txof';
-    private static $password = 'f2n56z60dh4b7iwk'; 
+    private static $dsn = 'mysql:host=pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=hnwmc5g21co1445v';
+    private static $username = 'jrlvsjo47diaivlp';
+    private static $password = 'hkkaaztkrtgmb375'; 
     private static $db;
 
     private function __construct() {}
