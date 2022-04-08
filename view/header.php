@@ -21,7 +21,7 @@
                     $userID = $_SESSION['userid'];
                     ?>
 
-                    <p> Welcome <?php $userID ?>! <a href = ".?action=logout">Sign Out </a></p>
+                    <p> Welcome <?php $firstname ?>! <a href = ".?action=logout">Sign Out </a></p>
                 <?php } ?>
                     
             </div>
