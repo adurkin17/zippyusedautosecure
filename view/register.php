@@ -12,7 +12,7 @@
 
 <?php } else { ?>
     <br> 
-    <h1 class="thank_you" > Thank you for registering, <?php $firstname ?> </h1> 
+    <h1 class="thank_you" > Thank you for registering, <?php print $firstname ?> </h1> 
     <br>
     <p><a href="."> Click Here </a> to view a full list of vehicles! </p>
     <br>
